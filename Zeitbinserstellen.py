@@ -23,8 +23,8 @@ if uploaded_file is not None:
         df['Zeitstempel'] = pd.to_datetime(df['Zeitstempel'], errors='coerce')
         df['Day Ahead Marktpreis (ct/kWh)'] = pd.to_numeric(df['Day Ahead Marktpreis (ct/kWh)'], errors='coerce')
 
-        df['Monat'] = df['Beendet'].dt.month
-        df['Tag'] = df['Beendet'].dt.day
-        df['Stunde'] = df['Beendet'].dt.hour
+        df['Monat'] = df['Zeitstempel'].dt.month
+        df['Tag'] = df['Zeitstempel'].dt.day
+        df['Stunde'] = df['Zeitstempel'].dt.hour
 
         st.write(df)
