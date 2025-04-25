@@ -21,7 +21,7 @@ if uploaded_file is not None:
     if df is not None:
         st.subheader("Originaldaten")
         df['Zeitstempel'] = pd.to_datetime(df['Zeitstempel'], errors='coerce')
-        df['Day Ahead Marktpreis (ct/kWh)'] = pd.to_numeric(df['Day Ahead Marktpreis (ct/kWh)'], errors='coerce')
+        df['Deutschland/Luxemburg [€/MWh]'] = pd.to_numeric(df['Deutschland/Luxemburg [€/MWh]'], errors='coerce')
 
         df['Monat'] = df['Zeitstempel'].dt.month
         df['Tag'] = df['Zeitstempel'].dt.day
