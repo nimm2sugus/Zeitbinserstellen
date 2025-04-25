@@ -10,8 +10,8 @@ def load_excel_file(uploaded_file):
         st.error(f"Fehler beim Laden der Datei: {e}")
         return None
 
-st.set_page_config(page_title="Stromeinkaufsanalyse", layout="wide")
-st.title("💶 Stromeinkaufsanalyse")
+st.set_page_config(page_title="Zeitbins erstellen", layout="wide")
+st.title("Zeitbins erstellen")
 
 uploaded_file = st.file_uploader("📁 Bereinigte Excel-Datei hochladen", type=["xlsx", "xls"])
 
@@ -20,8 +20,8 @@ if uploaded_file is not None:
 
     if df is not None:
         st.subheader("Originaldaten")
-        df['Beendet'] = pd.to_datetime(df['Beendet'], errors='coerce')
-        df['Verbrauch [kWh]'] = pd.to_numeric(df['Verbrauch [kWh]'], errors='coerce')
+        df['Zeitstempel'] = pd.to_datetime(df['Zeitstempel'], errors='coerce')
+        df['Day Ahead Marktpreis (ct/kWh)'] = pd.to_numeric(df['Day Ahead Marktpreis (ct/kWh)'], errors='coerce')
 
         df['Monat'] = df['Beendet'].dt.month
         df['Tag'] = df['Beendet'].dt.day
