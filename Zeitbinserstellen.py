@@ -20,10 +20,10 @@ if uploaded_file is not None:
 
     if df is not None:
         st.subheader("Originaldaten")
-        df['Beendet'] = pd.to_datetime(df['Beendet'], errors='coerce')
+        df['End_Session'] = pd.to_datetime(df['End_Session'], errors='coerce')
 
-        df['Monat'] = df['Beendet'].dt.month
-        df['Tag'] = df['Beendet'].dt.day
-        df['Stunde'] = df['Beendet'].dt.hour
+        df['Monat'] = df['End_Session'].dt.month
+        df['Tag'] = df['End_Session'].dt.day
+        df['Stunde'] = df['End_Session'].dt.hour
 
         st.write(df)
