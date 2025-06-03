@@ -20,7 +20,7 @@ if uploaded_file is not None:
 
     if df is not None:
         st.subheader("Originaldaten")
-        df['End_Session'] = pd.to_datetime(df['End_Session'], errors='coerce')
+        df['Datum bis'] = pd.to_datetime(df['Datum bis'], errors='coerce')
 
         df['Monat'] = df['End_Session'].dt.month
         df['Tag'] = df['End_Session'].dt.day
