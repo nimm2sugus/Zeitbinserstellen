@@ -20,10 +20,10 @@ if uploaded_file is not None:
 
     if df is not None:
         st.subheader("Originaldaten")
-        df['Datum bis'] = pd.to_datetime(df['Datum bis'], errors='coerce')
+        df['Zeitstempel'] = pd.to_datetime(df['Datum'], errors='coerce')
 
-        df['Monat'] = df['Datum bis'].dt.month
-        df['Tag'] = df['Datum bis'].dt.day
-        df['Stunde'] = df['Datum bis'].dt.hour
+        df['Monat'] = df['Datum'].dt.month
+        df['Tag'] = df['Datum'].dt.day
+        df['Stunde'] = df['Datum'].dt.hour
 
         st.write(df)
